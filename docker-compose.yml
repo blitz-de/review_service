@@ -1,0 +1,69 @@
+version: '3.9'
+
+
+services:
+#======================================================
+  reviews_api:
+    build:
+      context: .
+      dockerfile: ./docker/local/django/Dockerfile
+    command: /start
+    image: reviews_api
+#    command: 'python manage.py runserver 0.0.0.0:8003'
+    ports:
+      - "8003:8003"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - static_volume:/app/staticfiles
+      - media_volume:/app/mediafiles
+    depends_on:
+      - postgres-db
+    networks:
+      - app-tier
+#======================================================
+  queue:
+    build:
+      context: .
+      dockerfile: ./docker/local/rabbitmq/Dockerfile
+    restart: always
+    image: rabque
+    command: 'python consumer.py'
+    volumes:
+      - .:/app
+#    links:
+#      - postgres-db2
+    depends_on:
+#      - reviews_api
+      - postgres-db
+    networks:
+      - app-tier
+  #======================================================
+
+  postgres-db:
+    image: bitnami/postgresql:latest
+    container_name: postgresql_reviews
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql-persistence:/bitnami/postgresql
+    #zacki@gmail.com,123456
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRESQL_DATABASE=${POSTGRESQL_DB}
+#      - POSTGRESQL_POSTGRES_PASSWORD=review_pass
+    networks:
+      - app-tier
+
+#networks:
+#  tennis-react:
+#    external: true
+networks:
+  app-tier:
+    driver: bridge
+volumes:
+    postgresql-persistence:
+    static_volume:
+    media_volume:

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'mysql-db2' IDENTIFIED BY 'password' WITH GRANT OPTION;
+SET PASSWORD FOR root@'mysql-db2' = PASSWORD('root');
+FLUSH PRIVILEGES;
+
+mysql -u root --password="$MYSQL_ROOT_PASSWORD"  << EOF
+USE ${MYSQL_DATABASE};
+GRANT ALL PRIVILEGES ON  test_${MYSQL_DATABASE}.* TO '${MYSQL_USER}';
+EOF
