@@ -19,7 +19,7 @@ channel.queue_declare(queue='review_service')
 
 def callback(ch, method, properties, body):
     print('Received in review_service')
-    print("##############################################################")
+    print("####################@##########################################")
     # print(body) --> this will print b'"\\"UUID"
     data = json.loads(body)
     print(data)
