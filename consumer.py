@@ -41,10 +41,6 @@ channel.basic_consume(queue='review_service', on_message_callback=callback, auto
 channel.start_consuming()
 
 print('Started Consuming')
-# try:
-#
-# except KeyboardInterrupt:
-#     channel.stop_consuming()
 
 channel.close()
 

@@ -27,15 +27,11 @@ services:
     build:
       context: .
       dockerfile: ./docker/local/rabbitmq/Dockerfile
-    restart: always
+#    restart: always
     image: rabque
+    restart: on-failure
     command: 'python consumer.py'
-    volumes:
-      - .:/app
-#    links:
-#      - postgres-db2
     depends_on:
-#      - reviews_api
       - postgres-db
     networks:
       - app-tier
@@ -45,7 +41,7 @@ services:
     image: bitnami/postgresql:latest
     container_name: postgresql_reviews
     ports:
-      - "5432:5432"
+      - "54323:5432"
     volumes:
       - postgresql-persistence:/bitnami/postgresql
     #zacki@gmail.com,123456

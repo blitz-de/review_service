@@ -57,7 +57,7 @@ class Rating(TimeStampedUUIDModel):
     comment = models.TextField(verbose_name=_("Comment"))
 
     class Meta:
-        # both the rater and opponent are unique
+        # both the rater and opponent are unique -> represent a pk
         unique_together = ["id", "username"]
 
     def __str__(self):
