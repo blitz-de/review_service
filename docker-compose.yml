@@ -9,9 +9,10 @@ services:
       dockerfile: ./docker/local/django/Dockerfile
     command: /start
     image: reviews_api
+    container_name: reviewapp
 #    command: 'python manage.py runserver 0.0.0.0:8003'
-    ports:
-      - "8003:8003"
+#    ports:
+#      - "8003:8003"
     env_file:
       - .env
     volumes:
@@ -22,7 +23,9 @@ services:
       - postgres-db
     networks:
       - app-tier
-#======================================================
+      - my-tennis-react
+
+      #======================================================
   queue:
     build:
       context: .
@@ -31,6 +34,8 @@ services:
     image: rabque
     restart: on-failure
     command: 'python consumer.py'
+    env_file:
+      - .env
     depends_on:
       - postgres-db
     networks:
@@ -44,11 +49,10 @@ services:
       - "54323:5432"
     volumes:
       - postgresql-persistence:/bitnami/postgresql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     #zacki@gmail.com,123456
-    environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRESQL_DATABASE=${POSTGRESQL_DB}
+    env_file:
+      - .env
 #      - POSTGRESQL_POSTGRES_PASSWORD=review_pass
     networks:
       - app-tier
@@ -59,6 +63,9 @@ services:
 networks:
   app-tier:
     driver: bridge
+  my-tennis-react:
+    external:
+      name: users_network
 volumes:
     postgresql-persistence:
     static_volume:
