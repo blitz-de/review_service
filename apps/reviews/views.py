@@ -1,12 +1,16 @@
 import requests
-from rest_framework import permissions, status
+from rest_framework import permissions, status, viewsets, generics
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+
+from consumer import change_logged_status
 from .models import Rater, RatedUser
 from .models import Rating
 from requests.structures import CaseInsensitiveDict
 from .producer import RabbitMq
+from .serializers import ReviewSerializer
 
 r = RabbitMq()
 
@@ -15,7 +19,12 @@ r = RabbitMq()
 @permission_classes([permissions.AllowAny])
 def create_opponent_review(request, rater_username): # profile_id is the url_param (the person i want to rate)
     # permission_classes = [permissions.IsAuthenticated]
+    rater_user = get_object_or_404(Rater, username=rater_username)# is_signed=True,
+    if rater_user.is_signed == True:
+        print("hola")
 
+    if not rater_user.is_signed:
+        print("aa")
     # url = "http://userapp:8080/api/v1/profile/me/"
     # token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MDk0OTg5LCJqdGkiOiI3NzljZmUyMTBmMDc0MWFkODI4NjI2OGIwNjFkZjNiZSIsInVzZXJfaWQiOiI3MGY0OWI1NS0yNjFjLTRlNTQtYTI1ZS02YzRmNmYxZmRlZGYifQ.cs3HzlU2tBSnf6AlZMCGAy3jqkqsCQ2hqsdHEDWvkYI"
     # headers = CaseInsensitiveDict()
@@ -27,6 +36,7 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
     # print("@@@@@@@@@@@@@@@@@@@@@$%: ",
     #       resp)
     data = request.data
+    # rabbit_shared_Data  = rabbitmqServer(), user_status
 
     print("@@@@@@@@@@@@@@@@@@@@@: ")
     rated_user = get_object_or_404(Rater, username=data['rated_user'])# id=rater_id
@@ -34,7 +44,7 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
     # opponent = username
     print("$$$$$$$$$$$$$ ", data['rated_user'])
     # req = requests.get('http://localhost:8080/')
-    rater_user = get_object_or_404(Rater, username=rater_username)# is_signed=True,
+    # rater_user = get_object_or_404(Rater, username=rater_username)# is_signed=True,
     print("$@$$$$$$$$$$$$$$$$$$$$ i am here")
 
     if rater_user.username == rated_user.username: # opponent_profile returns zizo (username)
@@ -75,3 +85,9 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
     # consume- > rated_user.reviews +=1
     print("^^^^^^^^^^^^^^^^^^^^^: Message published")
     return Response("Review Added", status=status.HTTP_201_CREATED)
+
+
+class RatingListAPIView(generics.ListAPIView):
+    # permission_classes = [permissions.IsAuthenticated]
+    queryset = Rating.objects.all()
+    serializer_class = ReviewSerializer

@@ -37,6 +37,8 @@ class RabbitMqServerConfigure(metaclass=MetaClass):
 
 
 
+def change_logged_status(is_signed):
+    return is_signed
 
 class rabbitmqServer():
 
@@ -50,6 +52,9 @@ class rabbitmqServer():
         self._channel = self._connection.channel()
         self._tem = self._channel.queue_declare(queue=self.server.queue)
         print("Server started waiting for Messages ")
+    #
+    # def __init__(self):
+    #     self.signed_status = ""
 
     @staticmethod
     def callback(ch,method, properties, body):
@@ -81,13 +86,27 @@ class rabbitmqServer():
 
         if properties.content_type == 'user_signed':
             print("User just signed in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            # add email address
             print("The username should be: ", data['username'])
             rater = Rater.objects.get(username=data['username'])
-            rater.is_signed = True
+            print("33424 ", data['logged_status'] )
+            if data['logged_status'] == "False":
+                rater.is_signed = False
+                rater.save()
 
-            rater.save()
-            print("Rater just signed in")
+                ch.change_logged_status("False")
+
+
+                print("Rater just signed out")
+            elif data['logged_status'] == "True":
+                rater.is_signed = True
+                rater.save()
+                ch.change_logged_status("False")
+                print("Rater just signed in")
+            # add email to model
+
         # if user signs out rater.is_signed = False
+
     def startserver(self):
         self._channel.basic_consume(
             queue=self.server.queue,
