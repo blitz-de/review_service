@@ -17,4 +17,4 @@ sqlparse==0.3.1
 toml==0.10.1
 python-dev-tools==2020.9.10
 mysql-connector-python==8.0.28
-# mysqlclient==2.0.1
+drf-yasg==1.20.0

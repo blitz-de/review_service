@@ -8,7 +8,7 @@ except Exception as e:
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "review_service.settings.development")
 django.setup()
 
-from apps.reviews.models import Rater, RatedUser
+from apps.reviews.models import Rater
 
 
 class MetaClass(type):
@@ -37,8 +37,8 @@ class RabbitMqServerConfigure(metaclass=MetaClass):
 
 
 
-def change_logged_status(is_signed):
-    return is_signed
+# def change_logged_status(is_signed):
+#     return is_signed
 
 class rabbitmqServer():
 
@@ -76,10 +76,12 @@ class rabbitmqServer():
             if user_exists == False:
                 rater = Rater.objects \
                     .create(username=data['username'])
-                # rated_user = RatedUser.objects\
-                #     .create( username=data['username'])
+                print('rarara ', data['is_admin'])
+                if data['is_admin'] == 'True':
+                    rater.is_admin = True
+                    rater.save()
+                    print('Rater has been created and is an admin user')
                 rater.save()
-                # rated_user.save()
                 print("Rater and rated user Profiles have been created")
             else:
                 print("User already saved")
@@ -94,14 +96,14 @@ class rabbitmqServer():
                 rater.is_signed = False
                 rater.save()
 
-                ch.change_logged_status("False")
+                # ch.change_logged_status("False")
 
 
                 print("Rater just signed out")
             elif data['logged_status'] == "True":
                 rater.is_signed = True
                 rater.save()
-                ch.change_logged_status("False")
+                # ch.change_logged_status("False")
                 print("Rater just signed in")
             # add email to model
 

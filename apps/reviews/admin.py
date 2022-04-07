@@ -1,16 +1,18 @@
 from django.contrib import admin
-from .models import Rating, Rater, RatedUser
+from .models import Rating, Rater, Reply
 
 class RaterAdmin(admin.ModelAdmin):
 
-    list_display = ["id", "username", "nr_rated_users", "is_signed"]
+    list_display = ["id", "username", "nr_rated_users", 'is_admin', "is_signed"]
 
-class RatedUserAdmin(admin.ModelAdmin):
 
-    list_display = ["id", "username", "num_reviews"]
+class RatingAdmin(admin.ModelAdmin):
+    list_display = ["rater", "rated_user"]
+
+
+class ReplyAdmin(admin.ModelAdmin):
+    list_display = ["reply_user", "replied_rating"]
 
 admin.site.register(Rater, RaterAdmin)
-admin.site.register(RatedUser, RatedUserAdmin)
-admin.site.register(Rating)
-# admin.site.register(Rater)
-# admin.site.register(RatedUser)
+admin.site.register(Rating, RatingAdmin)
+admin.site.register(Reply, ReplyAdmin)

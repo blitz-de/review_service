@@ -41,6 +41,7 @@ THIRD_PARTY_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     # 'djoser',
     'corsheaders',
+    'drf_yasg',
     # 'django_countries',
 ]
 
@@ -124,6 +125,7 @@ MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = BASE_DIR / "mediafiles"
 
 REST_FRAMEWORK = {
+
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
         # 'rest_framework.permissions.IsAdminUser',
