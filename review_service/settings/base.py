@@ -41,7 +41,7 @@ THIRD_PARTY_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     # 'djoser',
     'corsheaders',
-    'drf_yasg',
+    # 'drf_yasg',
     # 'django_countries',
 ]
 
@@ -139,7 +139,7 @@ REST_FRAMEWORK = {
 #     "http://localhost:3000",
 # ]
 
-CORS_ALLOW_ALL_ORIGINS=True
+# CORS_ALLOW_ALL_ORIGINS=True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
