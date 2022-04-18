@@ -1,4 +1,4 @@
-import requests
+# import requests
 from rest_framework import permissions, status, viewsets, generics
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -15,7 +15,7 @@ from rest_framework.views import APIView
 
 from .models import Rater, Reply
 from .models import Rating
-from requests.structures import CaseInsensitiveDict
+# from requests.structures import CaseInsensitiveDict
 from .producer import RabbitMq
 from .serializers import ReviewSerializer, ReplySerializer, CustomReviewSerializer
 from .decorators import time_calculator
@@ -72,8 +72,11 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
 
             rated_user.rating = round(total / len(reviews), 2)
             rated_user.save()
-
-        RabbitMq.publish(r, "review_added", rated_user.username)
+        data_to_share = {
+            "username": rated_user.username,
+            "rating": rated_user.rating
+        }
+        RabbitMq.publish(r, "review_added", data_to_share)
         # consume- > rated_user.reviews +=1
         print("^^^^^^^^^^^^^^^^^^^^^: Message published")
         return Response("Review Added", status=status.HTTP_201_CREATED)
@@ -117,7 +120,11 @@ class UserRatingsView(APIView):
                 "response": "{} doesn't have any reated user".format(o_username)
             }
             return Response(response, status=status.HTTP_404_NOT_FOUND)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        response = {
+            "users": serializer.data
+        }
+        print("############################### ", response)
+        return Response(response, status=status.HTTP_200_OK)
 
 
 #API for getting the details of review on <id>

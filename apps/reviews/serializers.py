@@ -8,7 +8,9 @@ class ReviewSerializer(serializers.ModelSerializer):
             'pkid',
             'rating',
             'comment',
-            'rated_user'
+            'rated_user',
+            'rater',
+            'created_at'
         ]
 
 
