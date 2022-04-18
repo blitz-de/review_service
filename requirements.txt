@@ -18,5 +18,17 @@ toml==0.10.1
 # python-dev-tools==2020.9.10
 mysql-connector-python==8.0.28
 # drf-yasg==1.20.0
-pytest-cov==2.12.1
+
+graphviz==0.19.2
+django-extensions==3.1.5
+pydot ==1.4.2
+django-rest-swagger==2.2.0
+
+pytest-django==4.4.0
+pyparsing==3.0.7
 pytest==7.1.1
+factory-boy==3.2.1
+Faker==8.9.1
+pytest-cov==2.12.1
+pytest-factoryboy==2.1.0
+pytest-django==4.4.0

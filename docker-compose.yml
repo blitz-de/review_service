@@ -58,18 +58,13 @@ services:
     networks:
       - app-tier
 
-#networks:
-#  tennis-react:
-#    external: true
 networks:
   app-tier:
     driver: bridge
   my-tennis-react:
     external:
       name: users_network
-#   my-nginx-network:
-#     external:
-#         name: nginx_network
+
 volumes:
     postgresql-persistence:
     static_volume:
