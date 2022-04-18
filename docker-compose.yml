@@ -24,6 +24,7 @@ services:
     networks:
       - app-tier
       - my-tennis-react
+#       - my-nginx-network
 
       #======================================================
   queue:
@@ -66,6 +67,9 @@ networks:
   my-tennis-react:
     external:
       name: users_network
+#   my-nginx-network:
+#     external:
+#         name: nginx_network
 volumes:
     postgresql-persistence:
     static_volume:
