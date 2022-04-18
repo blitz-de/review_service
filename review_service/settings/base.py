@@ -3,16 +3,12 @@ from datetime import timedelta
 import pymysql
 import environ
 
-# pymysql.install_as_MySQLdb()
-
 env = environ.Env(DEBUG=(bool, False))
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: ", BASE_DIR)
 environ.Env.read_env(BASE_DIR / ".env")
-print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: ", environ.Env.read_env(BASE_DIR / "database.env"))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -37,12 +33,9 @@ SITE_ID = 1
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    "rest_framework_simplejwt",
-    'rest_framework_simplejwt.token_blacklist',
-    # 'djoser',
     'corsheaders',
-    # 'drf_yasg',
-    # 'django_countries',
+    'django_extensions',
+    'rest_framework_swagger',
 ]
 
 LOCAL_APPS = [
@@ -55,10 +48,10 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -77,6 +70,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries' : {
+                'staticfiles': 'django.templatetags.static',
+            }
         },
     },
 ]
@@ -125,66 +121,16 @@ MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = BASE_DIR / "mediafiles"
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
-        # 'rest_framework.permissions.IsAdminUser',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
-
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-# ]
-
-# CORS_ALLOW_ALL_ORIGINS=True
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# Custom user model
-# AUTH_USER_MODEL = "manage_user.User"
-
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=5),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=90),
-    'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
-    'ALGORITHM': 'HS256',
-    'SIGNING_KEY': env("SIGNING_KEY"),
-    #AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
-    'VERIFYING_KEY': None,
-    "AUTH_HEADER_TYPES": (
-        "Bearer",
-        "JWT",
-    ),
-    'USER_ID_FIELD': 'id',
-    'USER_ID_CLAIM': 'user_id',
-    "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
-    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
-    'TOKEN_TYPE_CLAIM': 'token_type',
-}
-
-# DJOSER={
-#     "LOGIN_FIELD":"email",
-#     "USER_CREATE_PASSWORD_RETYPE": True,
-#     "USERNAME_CHANGED_EMAIL_CONFIRMATION": True,
-#     "PASSWORD_CHANGED_EMAIL_CONFIRMATION": True,
-#     "SEND_CONFIRMATION_EMAIL": True,
-#     "PASSWORD_RESET_CONFIRM_URL": "password/reset/confirm/{uid}/{token}",
-#     "SET_PASSWORD_RETYPE": True,
-#     "PASSWORD_RESET_CONFIRM_RETYPE": True,
-#     "USERNAME_RESET_CONFIRM_URL":'email/reset/confirm/{uid}/{token}',
-#     'ACTIVATION_URL':'activate/{uid}/{token}',
-#     'SEND_ACTIVATION_EMAIL':True,
-#     'SERIALIZERS':{
-#         'user_create':'apps.manage_user.serializers.CreateUserSerializer',
-#         'user':'apps.manage_user.serializers.UserSerializer',
-#         'current_user':'apps.manage_user.serializers.UserSerializer',
-#         'user_delete': 'djoser.serializers.UserDeleteSerializer',
-#     },
-# }
 
 import logging
 import logging.config
@@ -226,3 +172,8 @@ logging.config.dictConfig(
         },
     }
 )
+
+GRAPH_MODELS = {
+    'all_applications': True,
+    'group_models': True
+}

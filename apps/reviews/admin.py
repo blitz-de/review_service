@@ -7,7 +7,7 @@ class RaterAdmin(admin.ModelAdmin):
 
 
 class RatingAdmin(admin.ModelAdmin):
-    list_display = ["rater", "rated_user"]
+    list_display = ['pkid', "rater", "rated_user"]
 
 
 class ReplyAdmin(admin.ModelAdmin):
