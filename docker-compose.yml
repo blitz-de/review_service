@@ -20,7 +20,7 @@ services:
       - postgres-db
     networks:
       - app-tier
-#       - my-tennis-react
+      - my-tennis-react
 
       #======================================================
   queue:
@@ -55,9 +55,9 @@ services:
 networks:
   app-tier:
     driver: bridge
-#   my-tennis-react:
-#     external:
-#       name: users_network
+  my-tennis-react:
+    external:
+      name: users_network
 
 volumes:
     postgresql-persistence:
