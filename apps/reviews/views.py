@@ -1,4 +1,5 @@
 # import requests
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import permissions, status, viewsets, generics
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -24,15 +25,15 @@ r = RabbitMq()
 # API to Create a review
 @api_view(["POST"])
 @permission_classes([permissions.AllowAny])
-def create_opponent_review(request, rater_username): # profile_id is the url_param (the person i want to rate)
+def create_opponent_review(request, rater_username):
     data = request.data
     rater_user = get_object_or_404(Rater, username=rater_username)# is_signed=True,
     rated_user = get_object_or_404(Rater, username=data['rated_user'])# id=rater_id
 
     if rater_user.is_signed:
 
-        # to check if raters arre not rating themselves
-        if rater_user.username == rated_user.username: # opponent_profile returns zizo (username)
+        # to check if raters are not rating themselves
+        if rater_user.username == rated_user.username:
             formatted_response = {"message": "You can't rate yourself"}
             return Response(formatted_response, status=status.HTTP_403_FORBIDDEN)
 
@@ -69,7 +70,7 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
         }
         RabbitMq.publish(r, "review_added", data_to_share)
 
-        print("^^^^^^: Message published", data_to_share)
+        print("Message published", data_to_share)
         return Response("Review Added", status=status.HTTP_201_CREATED)
     if not rater_user.is_signed:
         print("You must sign in to be able to review another user")
@@ -83,7 +84,6 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
 class UserRatingsView(APIView):
     permission_classes = permission_classes = (AllowAny,)
     serializer_class = ReviewSerializer
-    print("blub")
     def get_object(self, o_username):
         try:
             return get_object_or_404(Rater, username=o_username)
@@ -105,7 +105,6 @@ class UserRatingsView(APIView):
         response = {
             "users": serializer.data
         }
-        print("############################### ", response)
         return Response(response, status=status.HTTP_200_OK)
 
 # API to Read a review detail on <id>
@@ -123,7 +122,6 @@ class RatingDetailsView(APIView):
     def get(self, request, pk):
         related_rating = self.get_object(pk)
         serializer = ReviewSerializer(related_rating, context={"request": request})
-        print(serializer.data)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 # API to Delete a review on <id>
@@ -147,8 +145,7 @@ class DestroyReviewAPIView(DestroyAPIView):
     def get(self, request, pk, username):
         related_rating = self.get_object(pk, username)
         serializer = ReviewSerializer(related_rating, context={"request": request})
-        print(serializer.data)
-        print(request)
+
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def destroy(self, request, pk, username):
@@ -161,11 +158,7 @@ class DestroyReviewAPIView(DestroyAPIView):
 
             if u_rater.is_signed or u_rater.is_admin:
                 if Rating.objects.filter(Q(rater=u_rater) & Q(pk=instance.pk)).exists():
-                    print(rated_user)
-                    print("reviews: ", reviews.count())
-
-                    # using len would be a bad idea because len will slower down the deletion process.
-                    rated_user.num_reviews = reviews.count() #len(reviews)
+                    rated_user.num_reviews = reviews.count()
 
                     total = 0
                     for i in reviews:
@@ -177,8 +170,6 @@ class DestroyReviewAPIView(DestroyAPIView):
                         rated_user.rating = 0
 
                     rated_user.save()
-                    print(rated_user.rating)
-
                     instance.delete()
                 else:
                     transaction.set_rollback(True)
@@ -193,7 +184,6 @@ class DestroyReviewAPIView(DestroyAPIView):
 
 # API for updating review
 class UpdateReviewAPIView(APIView):
-    #permission_classes = (permissions.IsAdminUser, permissions.IsAuthenticated)
     permission_classes = (permissions.AllowAny,)
     serializer_class = CustomReviewSerializer
 
@@ -236,7 +226,6 @@ class UpdateReviewAPIView(APIView):
 
 # API to List my own reviews
 class MyReviewsAPIView(APIView):
-    #permission_classes = (permissions.IsAdminUser, permissions.IsAuthenticated)
     permission_classes = (permissions.AllowAny,)
     serializer_class = ReviewSerializer
 
@@ -254,7 +243,7 @@ class MyReviewsAPIView(APIView):
             if Rating.objects.filter(rater=related_user).exists():
                 reviews = Rating.objects.filter(rater=related_user)
                 serializer = ReviewSerializer(reviews, many=True, context={"request": request})
-                print(serializer.data)
+
             if not Rating.objects.filter(rater=related_user).exists():
                 response = {"response": "{} doesn't have any reated user".format(username)}
                 return Response(response, status=status.HTTP_200_OK)
