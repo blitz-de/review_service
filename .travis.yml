@@ -12,7 +12,6 @@ before_script: pip install docker-compose
 #
 script:
   - docker-compose up --build
-  - docker-compose exec reviews_api sh -c "python manage.py test"
   - docker-compose exec reviews_api sh -c "pytest -p no:warnings --cov=."
 
 deploy:
