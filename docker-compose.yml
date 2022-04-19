@@ -10,10 +10,6 @@ services:
     command: /start
     image: reviews_api
     container_name: reviewapp
-#    command: 'python manage.py runserver 0.0.0.0:8003'
-#    ports:
-#      - "8003:8003"
-    env_file:
       - .env
     volumes:
       - .:/app
@@ -24,14 +20,12 @@ services:
     networks:
       - app-tier
       - my-tennis-react
-#       - my-nginx-network
 
       #======================================================
   queue:
     build:
       context: .
       dockerfile: ./docker/local/rabbitmq/Dockerfile
-#    restart: always
     image: rabque
     restart: on-failure
     command: 'python consumer.py'
@@ -54,7 +48,6 @@ services:
     #zacki@gmail.com,123456
     env_file:
       - .env
-#      - POSTGRESQL_POSTGRES_PASSWORD=review_pass
     networks:
       - app-tier
 
