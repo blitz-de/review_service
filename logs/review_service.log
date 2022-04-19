@@ -23602,3 +23602,14 @@ AssertionError: 'DestroyReviewAPIView' should either include a `queryset` attrib
 2022-04-19 08:16:23,873 django.request WARNING  Not Found: /reviews/api/ratings/10/
 2022-04-19 08:16:24,109 django.request WARNING  Not Found: /reviews/api/users-ratings/non_user/
 2022-04-19 08:16:24,166 django.request WARNING  Not Found: /reviews/api/delete-review/10/username1011/
+2022-04-19 09:31:28,348 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 09:31:28,370 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36670), raddr=('54.93.32.234', 5671)>
+2022-04-19 09:31:28,447 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36670), raddr=('54.93.32.234', 5671)>
+2022-04-19 09:31:28,449 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fee1d4fa650>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fee1d4fa650> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 09:31:28,534 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fee1d4fa650> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 09:31:28,535 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fee1d4fa650> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 09:31:28,536 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fee1d4fa650> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 09:31:28,536 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 09:31:28,619 django.request WARNING  Not Found: /reviews/api/ratings/10/
+2022-04-19 09:31:28,748 django.request WARNING  Not Found: /reviews/api/users-ratings/non_user/
+2022-04-19 09:31:28,800 django.request WARNING  Not Found: /reviews/api/delete-review/10/username1011/
