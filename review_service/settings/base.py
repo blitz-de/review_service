@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from datetime import timedelta
 import pymysql
@@ -36,6 +37,8 @@ THIRD_PARTY_APPS = [
     'corsheaders',
     'django_extensions',
     'rest_framework_swagger',
+    'drf_yasg',
+
 ]
 
 LOCAL_APPS = [
@@ -61,7 +64,7 @@ ROOT_URLCONF = 'review_service.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,6 +135,15 @@ REST_FRAMEWORK = {
 }
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        "Auth Token eg [Bearer (JWT)]": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
 import logging
 import logging.config
 
