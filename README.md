@@ -27,6 +27,6 @@ There is a file called makefile, inside of it are various commands to run differ
 
 
 # Link to the User-Management-Service Travis-CI Dashboard
-`https://app.travis-ci.com/github/blitz-de/review_service`
+[Go to Travis-CI page for the project](https://app.travis-ci.com/github/blitz-de/review_service)  
 
 
