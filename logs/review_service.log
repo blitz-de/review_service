@@ -23167,3 +23167,438 @@ ValueError: Field 'id' expected a number but got 'f8a33dd0-76ba-4496-8982-02ad72
 2022-04-17 01:07:34,153 django.request WARNING  Not Found: /reviews/api/ratings/10/
 2022-04-17 01:07:34,259 django.request WARNING  Not Found: /reviews/api/users-ratings/non_user/
 2022-04-17 01:07:34,311 django.request WARNING  Not Found: /reviews/api/delete-review/10/username1011/
+2022-04-19 07:30:03,023 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:30:03,048 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36404), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:30:03,109 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36404), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:30:03,110 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff43957c700>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff43957c700> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:30:03,178 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff43957c700> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:30:03,178 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff43957c700> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:30:03,179 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff43957c700> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:30:03,179 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:30:06,816 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:30:07,398 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:30:07,421 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36410), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:30:07,477 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36410), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:30:07,478 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51c3a5ca90>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51c3a5ca90> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:30:07,698 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51c3a5ca90> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:30:07,700 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51c3a5ca90> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:30:07,703 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51c3a5ca90> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:30:07,711 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:33:30,090 django.utils.autoreload INFO     /app/review_service/urls.py changed, reloading.
+2022-04-19 07:33:31,289 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:33:36,074 django.utils.autoreload INFO     /app/review_service/urls.py changed, reloading.
+2022-04-19 07:33:37,693 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:35:15,437 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:35:15,464 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36440), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:35:15,517 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36440), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:35:15,518 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fd2a56e03d0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fd2a56e03d0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:35:15,585 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fd2a56e03d0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:35:15,586 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fd2a56e03d0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:35:15,587 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fd2a56e03d0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:35:15,587 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:35:19,754 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:35:20,302 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:35:20,322 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36446), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:35:20,377 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36446), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:35:20,378 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f46f1f9f0a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f46f1f9f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:35:20,439 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f46f1f9f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:35:20,440 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f46f1f9f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:35:20,441 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f46f1f9f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:35:20,441 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:35:23,712 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:36:20,018 django.utils.autoreload INFO     /app/review_service/settings/base.py changed, reloading.
+2022-04-19 07:36:21,285 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:36:21,736 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:36:21,758 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36456), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:36:21,808 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36456), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:36:21,809 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f22603d70a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f22603d70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:36:21,873 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f22603d70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:36:21,873 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f22603d70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:36:21,874 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f22603d70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:36:21,874 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:36:26,541 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:36:33,995 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:37:16,632 django.utils.autoreload INFO     /app/review_service/settings/base.py changed, reloading.
+2022-04-19 07:37:17,709 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:37:18,176 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:37:18,197 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36466), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:37:18,255 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36466), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:37:18,256 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc9964f70a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc9964f70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:37:18,329 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc9964f70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:37:18,330 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc9964f70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:37:18,330 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc9964f70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:37:18,331 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:37:20,917 django.utils.autoreload INFO     /app/review_service/settings/base.py changed, reloading.
+2022-04-19 07:37:22,130 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:37:22,562 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:37:22,585 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36472), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:37:22,636 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36472), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:37:22,637 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3fcd0430a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3fcd0430a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:37:22,716 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3fcd0430a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:37:22,717 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3fcd0430a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:37:22,717 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3fcd0430a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:37:22,718 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:37:53,238 django.utils.autoreload INFO     /app/review_service/urls.py changed, reloading.
+2022-04-19 07:37:54,283 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:37:54,718 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:37:54,740 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36478), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:37:54,818 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36478), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:37:54,819 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51cffcb0a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51cffcb0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:37:54,928 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51cffcb0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:37:54,929 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51cffcb0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:37:54,930 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f51cffcb0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:37:54,930 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:38:57,732 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:40:01,836 django.utils.autoreload INFO     /app/review_service/settings/base.py changed, reloading.
+2022-04-19 07:40:02,929 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:40:03,405 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:40:03,427 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36488), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:40:03,476 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36488), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:40:03,477 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc5745130a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc5745130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:40:03,541 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc5745130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:40:03,542 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc5745130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:40:03,542 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc5745130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:40:03,543 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:40:12,042 django.request WARNING  Not Found: /reviews/api//
+2022-04-19 07:40:23,198 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:43:19,027 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:43:41,933 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:43:45,667 django.utils.autoreload INFO     /app/review_service/settings/base.py changed, reloading.
+2022-04-19 07:43:47,049 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:43:47,534 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:43:47,557 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36518), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:43:47,653 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36518), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:43:47,654 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff1dc7130a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff1dc7130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:43:47,749 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff1dc7130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:43:47,749 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff1dc7130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:43:47,750 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff1dc7130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:43:47,750 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:44:20,614 django.utils.autoreload INFO     /app/review_service/settings/base.py changed, reloading.
+2022-04-19 07:44:21,704 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:44:22,157 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:44:22,178 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36524), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:44:22,231 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36524), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:44:22,233 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f80d8bfafb0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f80d8bfafb0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:44:22,295 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f80d8bfafb0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:44:22,296 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f80d8bfafb0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:44:22,297 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f80d8bfafb0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:44:22,297 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:44:26,688 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:44:27,454 django.utils.autoreload INFO     /app/review_service/settings/base.py changed, reloading.
+2022-04-19 07:44:28,688 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:44:29,160 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:44:29,184 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36532), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:44:29,236 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36532), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:44:29,239 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f55e9d9b0a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f55e9d9b0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:44:29,310 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f55e9d9b0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:44:29,310 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f55e9d9b0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:44:29,311 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f55e9d9b0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:44:29,312 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:44:30,083 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:46:01,103 django.request ERROR    Internal Server Error: /reviews/api/swagger/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.10/site-packages/django/core/handlers/base.py", line 202, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/renderers.py", line 73, in render
+    return render_to_string(self.template, renderer_context, renderer_context['request'])
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf-yasg/swagger-ui.html
+2022-04-19 07:48:54,966 django.utils.autoreload INFO     /app/review_service/settings/base.py changed, reloading.
+2022-04-19 07:48:56,234 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:48:56,545 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:48:56,566 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36544), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:48:56,634 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36544), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:48:56,635 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f505a9230a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f505a9230a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:48:56,719 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f505a9230a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:48:56,720 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f505a9230a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:48:56,720 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f505a9230a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:48:56,721 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:48:59,707 drf_yasg.inspectors.base WARNING  view's DestroyReviewAPIView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'DestroyReviewAPIView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+2022-04-19 07:48:59,710 drf_yasg.inspectors.base WARNING  view's ReplyToReviewAPIView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'ReplyToReviewAPIView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+2022-04-19 07:48:59,711 drf_yasg.inspectors.base WARNING  view's DestroyReviewAPIView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'DestroyReviewAPIView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+2022-04-19 07:49:51,592 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:49:51,615 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36572), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:49:51,699 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36572), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:49:51,700 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f48b5f785e0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f48b5f785e0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:49:51,790 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f48b5f785e0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:49:51,790 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f48b5f785e0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:49:51,791 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f48b5f785e0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:49:51,792 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:49:55,604 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:49:55,902 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:49:55,927 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36578), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:49:55,995 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36578), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:49:55,996 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3e67d7f0a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3e67d7f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:49:56,088 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3e67d7f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:49:56,089 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3e67d7f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:49:56,089 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3e67d7f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:49:56,090 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:51:37,254 django.request WARNING  Not Found: /reviews/api/delete-review/1/zico/
+2022-04-19 07:53:49,827 django.utils.autoreload INFO     /app/apps/reviews/views.py changed, reloading.
+2022-04-19 07:53:51,714 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:53:52,119 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:53:52,141 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36594), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:53:52,209 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36594), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:53:52,211 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c8a130a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c8a130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:53:52,309 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c8a130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:53:52,310 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c8a130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:53:52,311 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c8a130a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:53:52,312 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:53:52,456 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:53:52,483 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36598), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:53:52,555 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=11, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36598), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:53:52,557 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c88a8310>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c88a8310> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:53:52,687 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c88a8310> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:53:52,688 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c88a8310> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:53:52,688 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc3c88a8310> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:53:52,689 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:54:52,458 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:54:52,481 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36608), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:54:52,536 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36608), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:54:52,538 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff4d48c0610>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff4d48c0610> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:54:52,624 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff4d48c0610> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:54:52,625 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff4d48c0610> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:54:52,626 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7ff4d48c0610> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:54:52,626 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:54:57,038 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 07:54:57,351 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 07:54:57,371 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36614), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:54:57,424 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36614), raddr=('54.93.32.234', 5671)>
+2022-04-19 07:54:57,425 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fce64276fb0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fce64276fb0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 07:54:57,500 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fce64276fb0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:54:57,501 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fce64276fb0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:54:57,502 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fce64276fb0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 07:54:57,502 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 07:57:42,367 drf_yasg.inspectors.base WARNING  view's DestroyReviewAPIView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'DestroyReviewAPIView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+2022-04-19 07:57:42,369 drf_yasg.inspectors.base WARNING  view's ReplyToReviewAPIView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'ReplyToReviewAPIView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+2022-04-19 07:57:42,371 drf_yasg.inspectors.base WARNING  view's DestroyReviewAPIView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+  File "/usr/local/lib/python3.10/site-packages/rest_framework/generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'DestroyReviewAPIView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+2022-04-19 08:03:04,005 django.utils.autoreload INFO     /app/apps/reviews/models.py changed, reloading.
+2022-04-19 08:03:05,345 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 08:03:05,689 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 08:03:05,710 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36626), raddr=('54.93.32.234', 5671)>
+2022-04-19 08:03:05,762 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36626), raddr=('54.93.32.234', 5671)>
+2022-04-19 08:03:05,763 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc950e0f0a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc950e0f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 08:03:05,824 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc950e0f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:03:05,824 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc950e0f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:03:05,825 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fc950e0f0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:03:05,825 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 08:05:32,791 django.utils.autoreload INFO     /app/apps/reviews/producer.py changed, reloading.
+2022-04-19 08:05:34,176 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 08:05:34,462 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 08:05:34,485 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36632), raddr=('54.93.32.234', 5671)>
+2022-04-19 08:05:34,536 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36632), raddr=('54.93.32.234', 5671)>
+2022-04-19 08:05:34,537 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f41dead70a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f41dead70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 08:05:34,604 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f41dead70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:05:34,604 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f41dead70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:05:34,605 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f41dead70a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:05:34,605 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 08:16:07,510 django.utils.autoreload INFO     /app/apps/reviews/views.py changed, reloading.
+2022-04-19 08:16:09,420 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 08:16:09,747 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 08:16:09,770 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36638), raddr=('54.93.32.234', 5671)>
+2022-04-19 08:16:09,876 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36638), raddr=('54.93.32.234', 5671)>
+2022-04-19 08:16:09,877 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fb2ff1eb0a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fb2ff1eb0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 08:16:10,062 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fb2ff1eb0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:16:10,063 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fb2ff1eb0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:16:10,063 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fb2ff1eb0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:16:10,064 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 08:16:23,642 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 08:16:23,665 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36648), raddr=('54.93.32.234', 5671)>
+2022-04-19 08:16:23,713 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36648), raddr=('54.93.32.234', 5671)>
+2022-04-19 08:16:23,714 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3478eed0f0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3478eed0f0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 08:16:23,784 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3478eed0f0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:16:23,785 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3478eed0f0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:16:23,786 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f3478eed0f0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 08:16:23,786 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 08:16:23,873 django.request WARNING  Not Found: /reviews/api/ratings/10/
+2022-04-19 08:16:24,109 django.request WARNING  Not Found: /reviews/api/users-ratings/non_user/
+2022-04-19 08:16:24,166 django.request WARNING  Not Found: /reviews/api/delete-review/10/username1011/

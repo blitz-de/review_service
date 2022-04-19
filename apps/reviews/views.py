@@ -1,4 +1,5 @@
 # import requests
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import permissions, status, viewsets, generics
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
@@ -21,33 +22,24 @@ from .serializers import ReviewSerializer, ReplySerializer, CustomReviewSerializ
 from .decorators import time_calculator
 r = RabbitMq()
 
+# API to Create a review
 @api_view(["POST"])
 @permission_classes([permissions.AllowAny])
-def create_opponent_review(request, rater_username): # profile_id is the url_param (the person i want to rate)
-    # permission_classes = [permissions.IsAuthenticated]
+def create_opponent_review(request, rater_username):
     data = request.data
     rater_user = get_object_or_404(Rater, username=rater_username)# is_signed=True,
     rated_user = get_object_or_404(Rater, username=data['rated_user'])# id=rater_id
 
-    if rater_user.is_signed == True:
-
-        print("@@@@@@@@@@@@@@@@@@@@@: ")
-        print("$$$$$$$$$$$$$$$$$ ", rated_user.username)
-        # opponent = username
-        print("$$$$$$$$$$$$$ ", data['rated_user'])
+    if rater_user.is_signed:
 
         # to check if raters are not rating themselves
-        if rater_user.username == rated_user.username: # opponent_profile returns zizo (username)
+        if rater_user.username == rated_user.username:
             formatted_response = {"message": "You can't rate yourself"}
             return Response(formatted_response, status=status.HTTP_403_FORBIDDEN)
 
-        # rated_user_username = str(rater_username)
-        # print("R@@%@%@%@%@%@% rated_id: ", rated_user_username)
+        review_exists = Rating.objects.filter (rater=rater_user, rated_user=rated_user).exists()
 
-        reviewExists = Rating.objects.filter \
-            (rater=rater_user,rated_user=rated_user).exists()
-
-        if reviewExists:
+        if review_exists:
             formatted_response = {"detail": "Profile already reviewed"}
             return Response(formatted_response, status=status.HTTP_400_BAD_REQUEST)
         elif data["rating"] == 0:
@@ -56,7 +48,6 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
 
         else:
             review = Rating.objects.create(
-                    # rater=request.user,
                     rater=rater_user,
                     rated_user=rated_user,
                     rating=data["rating"],
@@ -70,6 +61,7 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
             for i in reviews:
                 total += i.rating
 
+            # the average rating
             rated_user.rating = round(total / len(reviews), 2)
             rated_user.save()
         data_to_share = {
@@ -77,8 +69,8 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
             "rating": rated_user.rating
         }
         RabbitMq.publish(r, "review_added", data_to_share)
-        # consume- > rated_user.reviews +=1
-        print("^^^^^^^^^^^^^^^^^^^^^: Message published")
+
+        print("Message published", data_to_share)
         return Response("Review Added", status=status.HTTP_201_CREATED)
     if not rater_user.is_signed:
         print("You must sign in to be able to review another user")
@@ -88,20 +80,10 @@ def create_opponent_review(request, rater_username): # profile_id is the url_par
         }
         return Response(response, status=status.HTTP_403_FORBIDDEN)
 
-
-# class RatingListAPIView(generics.ListAPIView):
-#     # permission_classes = [permissions.IsAuthenticated]
-#     print("I am here")
-#     queryset = Rating.objects.all()
-#     print("queryset: ", queryset)
-#     serializer_class = ReviewSerializer(queryset, many=True)
-
-
-#API for getting all the reviews for a user
+# API to List all the reviews for a user by username
 class UserRatingsView(APIView):
     permission_classes = permission_classes = (AllowAny,)
     serializer_class = ReviewSerializer
-    print("blub")
     def get_object(self, o_username):
         try:
             return get_object_or_404(Rater, username=o_username)
@@ -123,11 +105,9 @@ class UserRatingsView(APIView):
         response = {
             "users": serializer.data
         }
-        print("############################### ", response)
         return Response(response, status=status.HTTP_200_OK)
 
-
-#API for getting the details of review on <id>
+# API to Read a review detail on <id>
 class RatingDetailsView(APIView):
     permission_classes = permission_classes = (AllowAny,)
     serializer_class = ReviewSerializer
@@ -142,11 +122,9 @@ class RatingDetailsView(APIView):
     def get(self, request, pk):
         related_rating = self.get_object(pk)
         serializer = ReviewSerializer(related_rating, context={"request": request})
-        print(serializer.data)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-
-#API for deleting a review on <id>
+# API to Delete a review on <id>
 class DestroyReviewAPIView(DestroyAPIView):
     #permission_classes = (permissions.IsAdminUser, permissions.IsAuthenticated)
     permission_classes = (permissions.AllowAny,)
@@ -167,8 +145,7 @@ class DestroyReviewAPIView(DestroyAPIView):
     def get(self, request, pk, username):
         related_rating = self.get_object(pk, username)
         serializer = ReviewSerializer(related_rating, context={"request": request})
-        print(serializer.data)
-        print(request)
+
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def destroy(self, request, pk, username):
@@ -181,11 +158,7 @@ class DestroyReviewAPIView(DestroyAPIView):
 
             if u_rater.is_signed or u_rater.is_admin:
                 if Rating.objects.filter(Q(rater=u_rater) & Q(pk=instance.pk)).exists():
-                    print(rated_user)
-                    print("reviews: ", reviews.count())
-
-                    # using len would be a bad idea because len will slower down the deletion process.
-                    rated_user.num_reviews = reviews.count() #len(reviews)
+                    rated_user.num_reviews = reviews.count()
 
                     total = 0
                     for i in reviews:
@@ -197,8 +170,6 @@ class DestroyReviewAPIView(DestroyAPIView):
                         rated_user.rating = 0
 
                     rated_user.save()
-                    print(rated_user.rating)
-
                     instance.delete()
                 else:
                     transaction.set_rollback(True)
@@ -211,10 +182,8 @@ class DestroyReviewAPIView(DestroyAPIView):
 
         return Response({"detail": "Review deleted"}, status=status.HTTP_200_OK)
 
-
-#API for updating review
+# API for updating review
 class UpdateReviewAPIView(APIView):
-    #permission_classes = (permissions.IsAdminUser, permissions.IsAuthenticated)
     permission_classes = (permissions.AllowAny,)
     serializer_class = CustomReviewSerializer
 
@@ -255,10 +224,8 @@ class UpdateReviewAPIView(APIView):
                 return Response(message, status=status.HTTP_403_FORBIDDEN)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-#API to fetch my reviews
+# API to List my own reviews
 class MyReviewsAPIView(APIView):
-    #permission_classes = (permissions.IsAdminUser, permissions.IsAuthenticated)
     permission_classes = (permissions.AllowAny,)
     serializer_class = ReviewSerializer
 
@@ -276,10 +243,10 @@ class MyReviewsAPIView(APIView):
             if Rating.objects.filter(rater=related_user).exists():
                 reviews = Rating.objects.filter(rater=related_user)
                 serializer = ReviewSerializer(reviews, many=True, context={"request": request})
-                print(serializer.data)
+
             if not Rating.objects.filter(rater=related_user).exists():
                 response = {"response": "{} doesn't have any reated user".format(username)}
-                return Response(response, status=status.HTTP_404_NOT_FOUND)
+                return Response(response, status=status.HTTP_200_OK)
         if not related_user.is_signed:
             response = {
                 "message": "Please sign in to get your reviews",
@@ -288,16 +255,15 @@ class MyReviewsAPIView(APIView):
             return Response(response, status=status.HTTP_403_FORBIDDEN)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-
-#API to comment on my review
+# API to Post (Reply) on a review ID of a specifc username
 class ReplyToReviewAPIView(GenericAPIView):
-    #permission_classes = (permissions.IsAdminUser, permissions.IsAuthenticated)
-    permission_classes = (permissions.AllowAny,)
+    #permission_classes = (permissions.IsAdminUser, permissions.IsAuthenticated) Rating_ID/Replier/User Providing the review
+    # permission_classes = (permissions.AllowAny,)
     serializer_class = ReplySerializer
 
     def get_object(self, pk, o_username):
         try:
-            return get_object_or_404(Rating, pk=pk, rater__username=o_username)
+            return get_object_or_404(Rating, pk=pk, rater__username=o_username)#was rater, INFO: Rewview being replied: zacki rated at alia
         except Rating.DoesNotExist:
             raise Http404
 
@@ -314,7 +280,7 @@ class ReplyToReviewAPIView(GenericAPIView):
             u_rater = self.get_rater(username)
             print(u_rater)
 
-            if u_rater.is_signed:
+            if u_rater.is_signed: # rater! /...../username
                 if Rating.objects.filter(Q(pk=instance.pk)).exists():
                     # Create a serializer with request.data
                     #serializer = self.get_serializer(data=request.data)
@@ -340,4 +306,14 @@ class ReplyToReviewAPIView(GenericAPIView):
                 return Response(message, status=status.HTTP_403_FORBIDDEN)
 
         return Response({"detail": "Replied"}, status=status.HTTP_200_OK)
+
+
+
+
+# class RatingListAPIView(generics.ListAPIView):
+#     # permission_classes = [permissions.IsAuthenticated]
+#     print("I am here")
+#     queryset = Rating.objects.all()
+#     print("queryset: ", queryset)
+#     serializer_class = ReviewSerializer(queryset, many=True)
 

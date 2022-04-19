@@ -1,3 +1,5 @@
+from review_service.settings.base import env
+
 try:
     import pika
 
@@ -20,7 +22,7 @@ class MetaClass(type):
 
 class RabbitmqConfigure(metaclass=MetaClass):
 # publish to user_profiles
-    def __init__(self, queue='user_profiles', host='amqps://dowzsxzj:UT7_s888elZ3FCRdD1CjiHY9S9aQPI81@cow.rmq2.cloudamqp.com/dowzsxzj?heartbeat=300',
+    def __init__(self, queue='user_profiles', host=env("RABBITMQ_HOST"),
                  routingKey='user_profiles', exchange=''):
         """ Configure Rabbit Mq Server  """
         self.queue = queue
@@ -36,7 +38,7 @@ class RabbitMq():
         # self.server = server
 
         self._connection = pika.BlockingConnection(pika.URLParameters
-        ('amqps://dowzsxzj:UT7_s888elZ3FCRdD1CjiHY9S9aQPI81@cow.rmq2.cloudamqp.com/dowzsxzj?heartbeat=300'))
+        (env("RABBITMQ_HOST")))
         self._channel = self._connection.channel()
         self._channel.queue_declare(queue="profiles")
     # def publish(method, body):
@@ -52,29 +54,8 @@ class RabbitMq():
 
 if __name__ == "__main__":
     server = RabbitmqConfigure(queue='profiles',
-                               host='amqps://dowzsxzj:UT7_s888elZ3FCRdD1CjiHY9S9aQPI81@cow.rmq2.cloudamqp.com/dowzsxzj?heartbeat=300',
+                               host=env("RABBITMQ_HOST"),
                                routingKey='review_service',
                                exchange='')
 
     rabbitmq = RabbitMq()
-    # rabbitmq.publish()
-
-
-# # amqps://dowzsxzj:UT7_s888elZ3FCRdD1CjiHY9S9aQPI81@cow.rmq2.cloudamqp.com/dowzsxzj
-# import json
-#
-# import pika
-#
-# params = \
-#     pika.URLParameters('amqps://dowzsxzj:UT7_s888elZ3FCRdD1CjiHY9S9aQPI81@cow.rmq2.cloudamqp.com/dowzsxzj')
-#
-# connection = pika.BlockingConnection(params)
-#
-# channel = connection.channel()
-# channel.queue_declare(queue='review_service')
-#
-# def publish(method, body):
-#     properties = pika.BasicProperties(method)
-#     # routing key, for the consumer to know whom it's coming from
-#     channel.basic_publish(exchange='', routing_key='review_service',
-#                           body=json.dumps(body), properties=properties)

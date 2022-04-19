@@ -35,7 +35,6 @@ class Rating(models.Model):
     rater = models.ForeignKey(Rater,
                               verbose_name=_("User providing the rating"),
                               on_delete=models.SET_NULL, null=True)
-    # models.CharField(max_length=50, verbose_name=_("User providing the rating"),#  blank=True,#  null=True)
 
     rated_user = models.ForeignKey(Rater,
                                    max_length=50, verbose_name=_("User being rated"),
@@ -55,7 +54,7 @@ class Rating(models.Model):
     comment = models.TextField(verbose_name=_("Comment"))
 
     class Meta:
-        # both the rater and opponent are unique -> represent a pk
+        # both the rater and rated_user are unique -> represent a pk
         unique_together = ["rater", "rated_user"]
 
     def __str__(self):
