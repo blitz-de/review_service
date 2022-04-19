@@ -4211,6 +4211,7 @@ ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:2536)
 2022-03-15 22:57:19,953 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f2db27ed060> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
 2022-03-15 22:57:19,953 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f2db27ed060> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
 2022-03-15 22:57:19,954 pika.adapters.blocking_connection INFO     Created channel=1
+2022-04-19 09:54:14,985 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2022-03-15 23:14:30,240 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
 2022-03-15 23:14:30,270 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.96.3', 51836), raddr=('54.93.32.234', 5671)>
 2022-03-15 23:14:30,322 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.96.3', 51836), raddr=('54.93.32.234', 5671)>
@@ -23613,3 +23614,12 @@ AssertionError: 'DestroyReviewAPIView' should either include a `queryset` attrib
 2022-04-19 09:31:28,619 django.request WARNING  Not Found: /reviews/api/ratings/10/
 2022-04-19 09:31:28,748 django.request WARNING  Not Found: /reviews/api/users-ratings/non_user/
 2022-04-19 09:31:28,800 django.request WARNING  Not Found: /reviews/api/delete-review/10/username1011/
+2022-04-19 09:55:59,465 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2022-04-19 09:55:59,917 pika.adapters.utils.connection_workflow INFO     Pika version 1.1.0 connecting to ('54.93.32.234', 5671)
+2022-04-19 09:55:59,942 pika.adapters.utils.io_services_utils INFO     Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36690), raddr=('54.93.32.234', 5671)>
+2022-04-19 09:55:59,995 pika.adapters.utils.io_services_utils INFO     SSL handshake completed successfully: <ssl.SSLSocket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.24.0.4', 36690), raddr=('54.93.32.234', 5671)>
+2022-04-19 09:55:59,996 pika.adapters.utils.connection_workflow INFO     Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fed2f70b0a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fed2f70b0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>).
+2022-04-19 09:56:00,073 pika.adapters.utils.connection_workflow INFO     AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fed2f70b0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 09:56:00,074 pika.adapters.utils.connection_workflow INFO     AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fed2f70b0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 09:56:00,075 pika.adapters.blocking_connection INFO     Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fed2f70b0a0> params=<URLParameters host=cow.rmq2.cloudamqp.com port=5671 virtual_host=dowzsxzj ssl=True>>
+2022-04-19 09:56:00,075 pika.adapters.blocking_connection INFO     Created channel=1
