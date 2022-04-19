@@ -12,7 +12,7 @@ import sys
 import psycopg2
 try:
     psycopg2.connect(
-        dbname="${POSTGRESQL_DB}",
+        dbname="${POSTGRES_DB}",
         user="${POSTGRES_USER}",
         password="${POSTGRES_PASSWORD}",
         host="${PG_HOST}",

@@ -1,7 +1,5 @@
 import os
 from pathlib import Path
-from datetime import timedelta
-import pymysql
 import environ
 
 env = environ.Env(DEBUG=(bool, False))

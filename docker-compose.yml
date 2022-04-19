@@ -50,7 +50,7 @@ services:
       - "54323:5432"
     volumes:
       - postgresql-persistence:/bitnami/postgresql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+#       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     #zacki@gmail.com,123456
     env_file:
       - .env
