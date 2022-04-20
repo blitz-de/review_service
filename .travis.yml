@@ -1,0 +1,25 @@
+language: python
+python:
+  - "3.9"
+
+services:
+  - docker
+branches:
+  only:
+    - main
+
+before_script: pip install docker-compose
+#
+script:
+  - docker network create users_network
+  - docker-compose build
+  - docker-compose run reviews_api sh -c "python manage.py makemigrations && python manage.py migrate && pytest -p no:warnings --cov=."
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+    branch: main
+
+

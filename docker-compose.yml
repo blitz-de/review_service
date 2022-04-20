@@ -1,0 +1,65 @@
+version: '3.9'
+
+
+services:
+#======================================================
+  reviews_api:
+    build:
+      context: .
+      dockerfile: ./docker/local/django/Dockerfile
+    command: /start
+    image: reviews_api
+    container_name: reviewapp
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - static_volume:/app/staticfiles
+      - media_volume:/app/mediafiles
+    depends_on:
+      - postgres-db
+    networks:
+      - app-tier
+      - my-tennis-react
+
+      #======================================================
+  queue:
+    build:
+      context: .
+      dockerfile: ./docker/local/rabbitmq/Dockerfile
+    image: rabque
+    restart: on-failure
+    command: 'python consumer.py'
+    env_file:
+      - .env
+    depends_on:
+      - postgres-db
+    networks:
+      - app-tier
+  #======================================================
+
+  postgres-db:
+    image: bitnami/postgresql:latest
+    container_name: postgresql_reviews
+    ports:
+      - "54323:5432"
+    volumes:
+      - postgresql-persistence:/bitnami/postgresql
+#       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    #zacki@gmail.com,123456
+    env_file:
+      - .env
+    networks:
+      - app-tier
+
+networks:
+  app-tier:
+    driver: bridge
+  my-tennis-react:
+    external:
+      name: users_network
+
+volumes:
+    postgresql-persistence:
+    static_volume:
+    media_volume:
