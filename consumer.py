@@ -61,18 +61,20 @@ class rabbitmqServer():
             print("Information about the id and username: Id:", data['id'], " username: ", data['username'])
             user_exists = Rater.objects.filter(username=data['username']).exists()
 
-            if user_exists == False:
-                rater = Rater.objects \
-                    .create(username=data['username'])
-
-                if data['is_admin'] == 'True':
-                    rater.is_admin = True
-                    rater.save()
-                    print('Rater has been created and is an admin user')
-                rater.save()
-                print("Rater and rated user Profiles have been created")
+            if data['username'].startswith('test'):
+                print("A test user has been received. It won't be saved")
             else:
-                print("User already saved")
+                if user_exists == False:
+                    rater = Rater.objects \
+                        .create(username=data['username'])
+                    if data['is_admin'] == 'True':
+                        rater.is_admin = True
+                        rater.save()
+                        print('Rater has been created and is an admin user')
+                    rater.save()
+                    print("Rater and rated user Profiles have been created")
+                else:
+                    print("User already saved")
 
         if properties.content_type == 'user_signed':
             print("User ", data['username'], "just signed in")
@@ -84,6 +86,8 @@ class rabbitmqServer():
                 print("Rater just signed out")
 
             elif data['logged_status'] == "True":
+                if rater.is_signed == True:
+                    print ("User is already signed. You must logout first")
                 rater.is_signed = True
                 rater.save()
                 print("Rater just signed in")

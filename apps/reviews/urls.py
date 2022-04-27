@@ -9,6 +9,10 @@ urlpatterns = [
     #      name="all-reviews"),w
     path("users-ratings/<str:o_username>/", views.UserRatingsView.as_view(),#done
          name="users_ratings"),
+
+    path("rated-user/<str:username>/", views.UserRatedView.as_view(),#done
+         name="users_ratings"),
+
     path("ratings/<str:pk>/", views.RatingDetailsView.as_view(),#done
          name="rating_details"),
     path("my-reviews/<str:username>/", views.MyReviewsAPIView.as_view(),#done - fix to return my reviews

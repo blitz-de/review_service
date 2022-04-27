@@ -12,11 +12,12 @@ class Rater(models.Model):
                                     default=False)
     is_admin = models.BooleanField(verbose_name=_("User Admin"),
                                    default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
 
     def __str__(self):
         return self.username
+
 
 
 class Rating(models.Model):

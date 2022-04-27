@@ -99,7 +99,7 @@ class UserRatingsView(APIView):
             print(serializer.data)
         if not Rating.objects.filter(rater=related_user).exists():
             response = {
-                "response": "{} doesn't have any reated user".format(o_username)
+                "response": "{} doesn't have any rated user".format(o_username)
             }
             return Response(response, status=status.HTTP_404_NOT_FOUND)
         response = {
@@ -107,6 +107,32 @@ class UserRatingsView(APIView):
         }
         return Response(response, status=status.HTTP_200_OK)
 
+# API for Reviews made on a Rater's page
+class UserRatedView(APIView):
+    permission_classes = permission_classes = (AllowAny,)
+    serializer_class = ReviewSerializer
+    def get_object(self, username):
+        try:
+            return get_object_or_404(Rater, username=username)
+        except Rater.DoesNotExist:
+            raise Http404
+
+
+    def get(self, request, username):
+        related_user = self.get_object(username)
+        if Rating.objects.filter(rated_user=related_user).exists():
+            reviews = Rating.objects.filter(rated_user=related_user)
+            serializer = ReviewSerializer(reviews, many=True, context={"request": request})
+            print(serializer.data)
+        if not Rating.objects.filter(rater=related_user).exists():
+            response = {
+                "response": "{} doesn't have any reated user".format(username)
+            }
+            return Response(response, status=status.HTTP_404_NOT_FOUND)
+        response = {
+            "users": serializer.data
+        }
+        return Response(response, status=status.HTTP_200_OK)
 # API to Read a review detail on <id>
 class RatingDetailsView(APIView):
     permission_classes = permission_classes = (AllowAny,)
